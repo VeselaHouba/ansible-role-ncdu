@@ -1,0 +1,23 @@
+---
+
+- name: Compatibility check
+  fail:
+    msg: "This role only works on Debian"
+  when: ansible_os_family != "Debian"
+
+- name: Install ncdu & cron
+  apt:
+    name:
+      - ncdu
+      - cron
+
+- name: Setup custom cron
+  cron:
+    user: root
+    cron_file: ncdu
+    name: ncdu
+    job: ionice -c idle ncdu -o {{ ncdu_output_file }} {{ ncdu_paths }}
+    hour: "{{ ncdu_cron.hour }}"
+    minute: "{{ ncdu_cron.minute }}"
+    day: "{{ ncdu_cron.dayofmonth }}"
+    weekday: "{{ ncdu_cron.weekday }}"

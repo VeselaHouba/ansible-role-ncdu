@@ -1,0 +1,8 @@
+---
+ncdu_paths: /
+ncdu_output_file: /opt/ncdu.json
+ncdu_cron:
+  hour: "3"
+  minute: "15"
+  weekday: "*"
+  dayofmonth: "*"
