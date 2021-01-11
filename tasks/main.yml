@@ -16,7 +16,7 @@
     user: root
     cron_file: ncdu
     name: ncdu
-    job: ionice -c idle ncdu -o {{ ncdu_output_file }} {{ ncdu_paths }}
+    job: ionice -c idle ncdu {{ ncdu_switches }} -o {{ ncdu_output_file }} {{ ncdu_paths }}
     hour: "{{ ncdu_cron.hour }}"
     minute: "{{ ncdu_cron.minute }}"
     day: "{{ ncdu_cron.dayofmonth }}"

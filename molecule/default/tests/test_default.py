@@ -7,7 +7,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_ncdu(host):
-    cmd = host.run("ionice -c idle ncdu -o /opt/ncdu.json /")
+    cmd = host.run("ionice -c idle ncdu -q -o /opt/ncdu.json /")
     outfile = host.file("/opt/ncdu.json")
     assert cmd.rc == 0
     assert outfile.exists

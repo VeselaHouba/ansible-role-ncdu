@@ -26,6 +26,15 @@ Using `git`:
 $ git clone https://github.com/veselahouba/ansible-role-ncdu.git veselahouba.ncdu
 ```
 
+## Usage
+
+View existing ncdu output on server with:
+
+```shell
+ncdu -f /opt/ncdu.json
+```
+
+
 ## Dependencies
 
 * Ansible >= 2.8

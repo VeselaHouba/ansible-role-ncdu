@@ -6,3 +6,4 @@ ncdu_cron:
   minute: "15"
   weekday: "*"
   dayofmonth: "*"
+ncdu_switches: "-q"
