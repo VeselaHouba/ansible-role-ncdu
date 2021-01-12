@@ -1,6 +1,7 @@
 ---
 ncdu_paths: /
 ncdu_output_file: /opt/ncdu.json
+ncdu_enable_cron: true
 ncdu_cron:
   hour: "3"
   minute: "15"

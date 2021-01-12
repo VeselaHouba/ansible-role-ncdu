@@ -12,3 +12,9 @@ def test_ncdu(host):
     assert cmd.rc == 0
     assert outfile.exists
     assert outfile.size > 1000
+
+
+def test_ncdu_cron(host):
+    cronfile = host.file("/etc/cron.d/ncdu")
+    assert cronfile.exists
+    assert cronfile.contains('ionice -c idle ncdu')

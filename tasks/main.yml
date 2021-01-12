@@ -13,6 +13,7 @@
 
 - name: Setup custom cron
   cron:
+    state: "{{ 'present' if ncdu_enable_cron else 'absent' }}"
     user: root
     cron_file: ncdu
     name: ncdu
